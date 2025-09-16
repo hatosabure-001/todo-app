@@ -1,0 +1,146 @@
+/* Google Fontsからサイバー風のフォントを読み込む */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+/* 基本設定 */
+body {
+    background-color: #0d0f12; /* 背景をダークに */
+    color: #e0e0e0; /* 基本の文字色を薄いグレーに */
+    font-family: 'Noto Sans JP', sans-serif; /* 基本フォント */
+    text-align: center;
+    padding: 20px;
+}
+
+/* タイトル */
+h1 {
+    font-family: 'Orbitron', sans-serif; /* タイトル専用フォント */
+    color: #00ffff; /* ネオンブルー */
+    text-shadow: 0 0 5px #00ffff, 0 0 10px #00ffff, 0 0 15px #00b3b3; /* 光っているようなエフェクト */
+    letter-spacing: 3px; /* 文字間隔 */
+}
+
+/* 入力欄の共通スタイル */
+input[type="text"], input[type="time"] {
+    background-color: #1a1c20;
+    border: 1px solid #00ffff;
+    color: #e0e0e0;
+    padding: 10px;
+    border-radius: 5px;
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 5px;
+    outline: none; /* クリック時の枠線を消す */
+    transition: box-shadow 0.3s ease;
+}
+
+/* 入力欄がフォーカスされた時のスタイル */
+input[type="text"]:focus, input[type="time"]:focus {
+    box-shadow: 0 0 10px #00ffff; /* ネオン風の影 */
+}
+
+/* ボタンの共通スタイル */
+button {
+    padding: 10px 15px;
+    cursor: pointer;
+    border: 1px solid #00ffff;
+    background-color: transparent; /* 背景を透明に */
+    color: #00ffff;
+    font-family: 'Orbitron', sans-serif;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s, box-shadow 0.3s;
+}
+
+/* ボタンにマウスが乗った時のスタイル */
+button:hover {
+    background-color: #00ffff;
+    color: #0d0f12; /* 背景色と文字色を反転 */
+    box-shadow: 0 0 15px #00ffff;
+}
+
+/* タスクリスト全体 */
+ul {
+    list-style-type: none;
+    padding: 0;
+    max-width: 600px;
+    margin: 20px auto; /* 中央寄せ */
+}
+
+/* 各タスク */
+li {
+    background-color: #1a1c20;
+    border: 1px solid #333;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    display: flex;
+    flex-wrap: wrap; /* 折り返しを許可 */
+    justify-content: space-between;
+    align-items: center;
+    transition: border-color 0.3s;
+}
+
+li:hover {
+    border-color: #00ffff; /* マウスが乗ったら枠線を光らせる */
+}
+
+.task-text {
+    flex-grow: 1; /* スペースを埋めるように広がる */
+    text-align: left;
+    margin-right: 10px;
+}
+
+/* 削除ボタン */
+.delete-btn {
+    border-color: #ff0055;
+    color: #ff0055;
+}
+
+.delete-btn:hover {
+    background-color: #ff0055;
+    color: #0d0f12;
+    box-shadow: 0 0 15px #ff0055;
+}
+
+/* 備考欄のスタイル */
+.memo-box, .memo-area {
+    width: 100%; /* 横幅を100%に */
+    height: 40px;
+    margin-top: 10px;
+    padding: 8px;
+    background-color: #111;
+    border: 1px dashed #555; /* 破線に変更 */
+    border-radius: 4px;
+    resize: vertical;
+    font-family: 'Noto Sans JP', sans-serif;
+    color: #e0e0e0;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.memo-box:focus, .memo-area:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+
+/* 候補リストのコンテナ */
+.suggestions-box {
+    text-align: left;
+    border: 1px solid #00ffff;
+    background-color: #1a1c20;
+    position: absolute;
+    width: 250px; 
+    max-height: 150px;
+    overflow-y: auto;
+    z-index: 1000;
+}
+
+/* 候補リストの各項目 */
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.suggestion-item:hover {
+    background-color: #00ffff;
+    color: #0d0f12;
+}
